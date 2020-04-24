@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="web3.js"></script>
+    <script src="bundle.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>MyShop Application</h1><br><br>
+          <div>Contract is paused: <span id="paused"></span></div>
+          <form id="isPaused">
+            <div class="form-group">
+              <!-- <label for="isPaused"></label> -->
+            </div>
+            <button type="submit" class="btn btn-primary">Pause/Unpause</button>
+          </form><hr>
+          <div>Registered items (ID): <span id="listItems"></span></div>
+          <div>Registered orders: <span id="listOrders"></span></div>
+          <div>Registered buyers: <span id="listBuyers"></span></div>
+          <hr>
+          <form id="showItem">
+            <div class="form-group">
+              <h5>Show item details:</h5>
+              <input id="inputIDItem" type="number" placeholder="insert registered item ID" class="form-control"></input>
+            </div>
+            <button type="submit" class="btn btn-primary">Show Item</button>
+          </form>
+          <div>Item ID: <span id="listItemID"></span></div>
+          <div>Item name: <span id="listItemName"></span></div>
+          <div>Item description: <span id="listItemDesc"></span></div>
+          <div>Item inventory: <span id="listItemInvent"></span></div>
+          <div>Item price (in Wei): <span id="listItemPrice"></span></div>
+          <hr>
+          <form id="showOrder">
+            <div class="form-group">
+              <h5>Show order details:</h5>
+              <input id="inputOrder" type="number" placeholder="insert order number" class="form-control"></input>
+            </div>
+            <button type="submit" class="btn btn-primary">Show Item</button>
+          </form>
+          <div>Order number: <span id="orderNumber"></span></div>
+          <div>Buyer email: <span id="orderBuyerEmail"></span></div>
+          <div>Buyer address: <span id="orderBuyerAddress"></span></div>
+          <hr>
+          <form id="registerBuyer">
+            <div class="form-group">
+              <h5>Register yourself as buyer:</h5>
+              <input id="rBuyerName" type="text" placeholder="Name" class="form-control"></input>
+              <input id="rBuyerEmail" type="text" placeholder="Email address" class="form-control"></input>
+              <input id="rBuyerAddress" type="text" placeholder="Address for delivery" class="form-control"></input>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+          </form>
+          <hr>
+          <form id="buyItem">
+            <div class="form-group">
+              <h5>Buy an item:</h5>
+              <input id="bItemID" type="number" placeholder="Item ID" class="form-control"></input>
+              <input id="bItemQty" type="number" placeholder="Quantity" class="form-control"></input>
+            </div>
+            <button type="submit" class="btn btn-primary">Buy Item</button>
+          </form>
+          <hr>
+          <form id="addItem">
+            <div class="form-group">
+              <h5>Add item (owner only):</h5>
+              <input id="addItemID" type="number" placeholder="Item ID (number)" class="form-control"></input>
+              <input id="addItemName" type="string" placeholder="Item name" class="form-control"></input>
+              <input id="addItemDesc" type="string" placeholder="Item description" class="form-control"></input>
+              <input id="addItemInvent" type="number" placeholder="Item inventory (number)" class="form-control"></input>
+              <input id="addItemPrice" type="number" placeholder="Item price (in wei)" class="form-control"></input>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Item</button>
+          </form>
+          <hr>
+          <form id="updateItem">
+            <div class="form-group">
+              <h5>Update existing item (owner only):</h5>
+              <input id="upItemID" type="number" placeholder="Item ID (number)" class="form-control"></input>
+              <input id="upItemName" type="string" placeholder="Item name" class="form-control"></input>
+              <input id="upItemDesc" type="string" placeholder="Item description" class="form-control"></input>
+              <input id="upItemInvent" type="number" placeholder="Item inventory (number)" class="form-control"></input>
+              <input id="upItemPrice" type="number" placeholder="Item price (in wei)" class="form-control"></input>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Item</button>
+          </form>
+          <hr>
+          <form id="Withdraw">
+            <div class="form-group">
+              <h5>Withdraw funds from contract (owner only):</h5>
+              <input id="wdAddress" type="text" placeholder="Address to send the funds" class="form-control"></input>
+              <!-- <button type="button" class="btn btn-primary" onclick="withdrawFunds();">Submit</button> -->
+            </div>
+            <button type="submit" class="btn btn-primary">Withdraw</button>
+          </form>
+          <hr>
+          <form id="Destroy">
+            <div class="form-group">
+              <h5>Destroy contract and withdraw funds (irreversible)(owner only):</h5>
+              <input id="dAddress" type="text" placeholder="Address to send the funds" class="form-control"></input>
+              <!-- <button type="button" class="btn btn-primary" onclick="withdrawFunds();">Submit</button> -->
+            </div>
+            <button type="submit" class="btn btn-primary">Destroy the contract</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
